@@ -1,5 +1,5 @@
 import youtubeSearch from 'youtube-api-v3-search';
-import YTApi from '../../../api';
+import YTApi from '../../api';
 
 const API_KEY = YTApi;
 
@@ -36,3 +36,5 @@ export const buscaVideo = (termo) => {
             .catch(() => dispatch(buscaVideoErro()))
     }
 }
+
+ 
