@@ -12,10 +12,24 @@
 
 .video-list{
   grid-area: video-list;
-  background: yellow;
+  background: #FFFACD;
+  padding: 15px
 }
 
 .video-player{
   grid-area: video-player;
-  background: blue;
+  background: #F0E68c;
+}
+
+.video-title{
+  font-weight: 600;
+  color: #468284;
+  padding: 10px;
+  margin: 0;
+}
+
+.video-description{
+  padding: 10px;
+  color: #0000cd;
+  margin: 0
 }

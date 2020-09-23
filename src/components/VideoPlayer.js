@@ -1,11 +1,33 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {Advertisement, Embed} from  'semantic-ui-react';
 
 const VideoPlayer = props => {
     return (
         <div className="video-player">
-            <h1>Video Player</h1>
+            {
+                !props.video.id && (
+                    <Advertisement style={{'heigh': '433px'}} unit='top banner' test='Escolha um vídeo para reproduzir'  />
+                )
+            }
+            {
+                props.video.id && (
+                    <div>   
+                        <Embed id={props.video.id.videoId} source='youtube' placeholder='' />
+                        <p className="video-title">{props.video.snippet.title}</p>
+                        <p className="video-description">{props.video.snippet.description}</p>
+                    </div>
+                )
+            }
+            
         </div>
     )
 };
 
-export default VideoPlayer;
+const mapStateToProps = (state) => {
+    return{
+        video: state.reproduzVideo.video
+    }
+}
+
+export default connect(mapStateToProps, null)(VideoPlayer);
